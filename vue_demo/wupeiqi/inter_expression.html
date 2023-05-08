@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="uft-8"></script>
+</head>
+<body>
+<div id="app">
+    <div>我叫{{name}}，我喜欢{{hobby}}，邮箱:{{dataInfo.email}}</div>
+    <ul>
+        <li>{{'李杰'}}</li>
+        <li>{{'李杰' + "土鳖"}}</li>
+        <li>{{ base + 1 + 1 }}</li>
+        <li>{{ 1===1 ?"李杰":"alex"}}</li>
+    </ul>
+    <ul>
+        <li>{{ condition?"李杰":"alex"}}</li>
+    </ul>
+    <input type="button" value="点我" v-on:click="clickMe">
+</div>
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            name: '武沛齐',
+            hobby: '篮球',
+            dataInfo: {
+                id: 1,
+                email: "xxx.com"
+            },
+            condition: false,
+            base: 1
+        },
+        methods: {
+            clickMe: function () {
+                this.name = "苑日天";
+                this.condition = true;
+                this.dataInfo.email = "wupeiqi@live.com";
+                this.base += 100;
+            }
+        }
+    })
+
+// {{ }}和v-text的作用是一样的都是插入值直接渲染  innerText
+// v-htmL既能插入值又能插入标签  innerHTML
+
+</script>
+</body>
+</html>

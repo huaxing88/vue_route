@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="uft-8"></script>
+</head>
+<div id="app">
+    <ul>
+        <li v-for="(item, idx) in cityList">{{item.id}} - {{item.text}}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            cityList: [
+                {id: 11, text: "上海"},
+                {id: 12, text: "北京"},
+                {id: 13, text: "深圳"},
+            ],
+        }
+    })
+</script>
+
+</html>

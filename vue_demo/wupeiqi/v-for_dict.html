@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="uft-8"></script>
+</head>
+<div id="app">
+    <ul>
+        <li v-for="(value, key) in dataDict">{{key}} - {{value}}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            dataDict: {
+                id: 1,
+                age: 18,
+                name: "xxx"
+            },
+        }
+    })
+</script>
+
+</html>

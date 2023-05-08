@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="uft-8"></script>
+</head>
+<body>
+  <div id="app">
+    {{ info }}
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js">
+    // import axios from "axios";
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+          info: null
+        }
+      },
+      mounted () {
+        axios
+          .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+          .then(response => (this.info = response))
+      }
+    })
+    </script>
+</body>
+</html>

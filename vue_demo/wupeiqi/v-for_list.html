@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="uft-8"></script>
+</head>
+<div id="app">
+    <ul>
+        <li v-for="(item, idx) in dataList">{{idx}} - {{item}}</li>
+    </ul>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            dataList: ["郭德纲", "于谦", "三哥"],
+        }
+    })
+</script>
+
+</html>

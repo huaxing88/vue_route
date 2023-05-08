@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../mywork/project/frontend"
+		},
+		{
+			"path": "../vue-todos_pro/vue-todos-master"
+		},
+		{
+			"path": "../vue-todos_pro/vue-todos-master_self"
+		},
+		{
+			"path": "../vue2-shop"
+		},
+		{
+			"path": "../blog-web"
+		},
+		{
+			"path": "../vue2-manage"
+		},
+		{
+			"path": "../vue_combat"
+		},
+		{
+			"path": "../MiniAdminfront"
+		},
+		{
+			"path": "../../../mywork/project2023/page/huaxing-info"
+		},
+		{
+			"path": "../37_debug-in-vs-code"
+		}
+	],
+	"settings": {}
+}

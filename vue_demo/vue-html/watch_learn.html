@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js" type="text/javascript" charset="uft-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            用户名：<input type="text" v-model="userName">
+            <!-- 用户名：<input type="text" :value="userName"> -->
+        </p>
+    </div>
+    <script src="./lib/vue-2.6.14.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                userName:""
+            },
+            // 侦听器
+            watch:{
+            	// 方法格式的侦听器
+                // userName(newVal,oldVal) {
+                //     console.log(`新值：${newVal}`)
+                //     console.log(`旧值：${oldVal}`)
+                // }
+
+                // 对象格式的侦听器
+                userName: {
+                    immediate:true,
+                    handler(newVal,oldVal) {
+                        console.log(`新值：${newVal}`)
+                    }
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

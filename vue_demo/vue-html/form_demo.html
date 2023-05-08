@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js" type="text/javascript" charset="uft-8"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="card">
+        <div class="card-header">添加品牌</div>
+        <div class="card-body">
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">品牌名称</div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="请输入品牌名称" v-model.trim="addName">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-2" @click.prevent="addRow">添加</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 表格区域 -->
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">品牌名称</th>
+                <th scope="col">状态</th>
+                <th scope="col">创建时间</th>
+                <th scope="col">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item of list" :key="item.id">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" :id="item.id" v-model="item.status">
+                        <label class="custom-control-label" :for="item.id" v-if="item.status">已启用</label>
+                        <label class="custom-control-label" :for="item.id" v-else>已禁用</label>
+                    </div>
+                </td>
+                <td>{{item.time}}</td>
+                <td>
+                    <a href="javascript:;" @click="delRow(item.id)">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <script>
+    const vm = new Vue({
+      el:"#app",
+      data:{
+        addName:'', //要添加的品牌名
+        list:[
+          {
+            id:1,
+            name:'宝马',
+            status:true,
+            time: new Date()
+          },{
+            id:2,
+            name:'奔驰',
+            status:false,
+            time: new Date()
+          },{
+            id:3,
+            name:'奥迪',
+            status:false,
+            time: new Date()
+          },{
+            id:4,
+            name:'红旗',
+            status:true,
+            time: new Date()
+          }
+        ]
+      },
+      methods: {
+        // 删除
+        delRow(id) {
+          // 过滤掉id不等于要删除的元素id，然后重新赋值给list
+         this.list = this.list.filter(item => item.id !== id)
+        },
+        // 添加
+        addRow() {
+          let keyword = this.addName
+          
+          if(keyword === "") {
+            alert("您没有输入任何内容！！")
+            return
+          }else {
+            let len = this.list.length + 1
+            let item = {
+              id:len,
+              name:keyword,
+              status:true,
+              time:new Date()
+            }
+            // push()在数组最后添加元素
+            this.list.push(item)
+            this.addName = ''
+          }
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

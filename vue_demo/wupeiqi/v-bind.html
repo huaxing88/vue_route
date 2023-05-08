@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js" type="text/javascript" charset="uft-8"></script>
+    <style>
+        .ig {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <img src='xx.png' class='c1' />
+    
+    <img alt="" v-bind:src="imageUrl" v-bind:class="cls">
+
+</div>
+
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            imageUrl: 'https://hcdn2.luffycity.com/media/frontend/public_class/PY1@2x_1566529821.1110113.png',
+            cls: "ig",
+        }
+    })
+</script>
+</body>
+</html>
+
+
