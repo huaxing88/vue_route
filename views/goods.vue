@@ -41,9 +41,9 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, name: '商品1', price: 100 },
-        { id: 2, name: '商品2', price: 200 },
-        { id: 3, name: '商品3', price: 300 },
+        { id: 1, name: '苹果', price: 8.8 },
+        { id: 2, name: '香蕉', price: 6.5 },
+        { id: 3, name: '梨子', price: 4.5 },
       ],
       cartItems: [],
     };
